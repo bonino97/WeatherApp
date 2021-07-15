@@ -58,7 +58,6 @@ function consultarAPI(ciudad, pais) {
   fetch(url)
     .then((respuesta) => respuesta.json())
     .then((datos) => {
-      console.log(datos);
       limpiarHTML();
 
       if (datos.cod === '404') {

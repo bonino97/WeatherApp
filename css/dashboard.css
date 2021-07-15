@@ -95,6 +95,7 @@ html {
 .sidebar-text-sm {
   font-size: 0.85rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .sidebar-city-img {
@@ -321,38 +322,6 @@ main {
   margin: 1rem;
 }
 
-th,
-td {
-  font-size: 0.9rem;
-  padding: 1rem 1rem;
-  color: var(--color-dark);
-}
-
-td {
-  font-size: 0.8rem;
-}
-
-tbody tr:nth-child(even) {
-  background: #f9fafc;
-}
-
-.badge {
-  padding: 0.2rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.7rem;
-}
-
-.badge.success {
-  background: #def7ec;
-  color: var(--main-color);
-}
-
-.badge.warning {
-  background: #f0f6b2;
-  color: orange;
-}
-
 .text-center {
   text-align: center;
 }
@@ -368,6 +337,7 @@ tbody tr:nth-child(even) {
 .sidebar-weather-text {
   font-size: 5em;
   font-weight: 200;
+  text-transform: uppercase;
 }
 
 .sidebar-weather-text .centigrade-letter {
@@ -378,8 +348,40 @@ tbody tr:nth-child(even) {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-gray {
-  color: var(--color-gray);
+  color: var(--color-gray) !important;
+}
+.error-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.error-message {
+  border-radius: 20px;
+  width: 250px;
+  height: 100px;
+  background-color: #ec4e4e;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.today-highlights-text {
+  color: var(--color-dark);
+  font-size: 3rem !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -400,7 +402,7 @@ tbody tr:nth-child(even) {
   #sidebar-toggle:not(:checked) ~ .sidebar li h1 {
     display: none;
   }
-  
+
   .sidebar {
     width: 60px;
     z-index: 150;

@@ -12,6 +12,7 @@
       href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css"
     />
     <link rel="stylesheet" href="css/dashboard.css" />
+    <link href="css/spinner.css" rel="stylesheet" />
   </head>
   <body>
     <input type="checkbox" id="sidebar-toggle" />
@@ -27,32 +28,36 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <span class="ti-search"></span>
-            <input
-              class="input-search"
-              type="search"
-              placeholder="Search place..."
-              type="text"
-              name="city"
-              id="city"
-            />
+            <form action="#" onsubmit="getWeather(event)">
+              <span class="ti-search"></span>
+              <input
+                class="input-search"
+                type="search"
+                placeholder="Search by City..."
+                type="text"
+                name="city"
+                id="city"
+              />
+            </form>
           </li>
           <li>
             <img src="img/sun-cloud-rain-lg.jpeg" alt="" />
           </li>
           <li class="text-center">
-            <h1 class="sidebar-weather-text">12°</h1>
+            <h1 id="actualTemp" class="sidebar-weather-text">12°</h1>
           </li>
           <li class="text-center">
-            <p>Monday, <span class="text-gray">16:00</span></p>
+            <p class="text-gray" id="formattedDate">Monday, 16:00</p>
           </li>
           <li>
             <hr />
           </li>
-          <li><p class="sidebar-text-sm">Mostly Cloud</p></li>
-          <li><p class="sidebar-text-sm">Rain - 30%</p></li>
           <li>
-            <p class="sidebar-city-text">New York</p>
+            <p class="sidebar-text-sm" id="weatherDescription">Mostly Cloud</p>
+          </li>
+          <li><p class="sidebar-text-sm" id="weatherMain">Rain</p></li>
+          <li>
+            <p id="selectedCity" class="sidebar-city-text">New York</p>
             <img class="sidebar-city-img" src="img/new-york.jpeg" alt="" />
           </li>
         </ul>
@@ -154,13 +159,13 @@
 
         <section class="recent">
           <h3 class="activity-header">Today's Highlights</h3>
+          <div id="alertContainer" class="error-container"></div>
           <div class="activity-grid">
             <div class="card-highlights">
               <div class="card-header">
                 <h5>UV Index</h5>
               </div>
-              <div class="card-body">
-                <span class="ti-check-box"></span>
+              <div class="card-body text-left">
                 <div>
                   <h5>Processed</h5>
                   <h4>$20,659</h4>
@@ -171,8 +176,7 @@
               <div class="card-header">
                 <h5>Wind Status</h5>
               </div>
-              <div class="card-body">
-                <span class="ti-check-box"></span>
+              <div class="card-body text-left">
                 <div>
                   <h5>Processed</h5>
                   <h4>$20,659</h4>
@@ -183,8 +187,7 @@
               <div class="card-header">
                 <h5>Sunrise & Sunset</h5>
               </div>
-              <div class="card-body">
-                <span class="ti-check-box"></span>
+              <div class="card-body text-left">
                 <div>
                   <h5>Processed</h5>
                   <h4>$20,659</h4>
@@ -195,11 +198,10 @@
               <div class="card-header">
                 <h5>Humidity</h5>
               </div>
-              <div class="card-body">
-                <span class="ti-check-box"></span>
+              <div class="card-body text-left">
                 <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+                  <h4 id="humidity" class="today-highlights-text">12 %</h4>
+                  <h4 class="mt-2">Normal &#9996;</h4>
                 </div>
               </div>
             </div>
@@ -207,11 +209,10 @@
               <div class="card-header">
                 <h5>Visibility</h5>
               </div>
-              <div class="card-body">
-                <span class="ti-check-box"></span>
+              <div class="card-body text-left">
                 <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+                  <h4 id="visibility" class="today-highlights-text">10 km</h4>
+                  <h4 class="mt-2">Average &#128533;</h4>
                 </div>
               </div>
             </div>
@@ -220,7 +221,6 @@
                 <h5>Air Quality</h5>
               </div>
               <div class="card-body">
-                <span class="ti-check-box"></span>
                 <div>
                   <h5>Processed</h5>
                   <h4>$20,659</h4>
@@ -231,6 +231,6 @@
         </section>
       </main>
     </div>
-    <script src="js/app.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
