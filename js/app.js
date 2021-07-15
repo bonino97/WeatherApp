@@ -1,6 +1,8 @@
 const apiKey = '942efe42fad7cec9560614b927352b66';
 const alertContainer = document.getElementById('alertContainer');
 
+apiPerDay('New York'); //Initial Values
+
 function getWeather(e) {
   e.preventDefault();
   const city = document.getElementById('city').value;
