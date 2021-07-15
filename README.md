@@ -2,7 +2,9 @@
 ### Segundo Parcial - Lenguaje de Programacion para la Administracion.
 Vamos a copiar un diseño web utilizando HTML y CSS al mismo tiempo aplicaremos Responsive para que la aplicacion se visualize correctamente en cualquier dispositivo (celular, tablet, laptop y monitor).
 
-Los datos obtenidos de la consulta HTTP deben utilizarse para completar la información en pantalla sobre el clima del dia de hoy y de los proximos dias.
+##### API: https://openweathermap.org/
+
+Los datos obtenidos de la API mediante consultas HTTP son utilizados para completar la información en pantalla sobre el clima del dia de hoy y de los proximos dias.
 
 ##### Link: https://bonino97.github.io/WeatherApp/index.html
 
