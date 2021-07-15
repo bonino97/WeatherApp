@@ -19,7 +19,7 @@
     <div class="sidebar">
       <div class="sidebar-header">
         <h3 class="brand">
-          <div class="search-wrapper"></div>
+          <span>Weather App</span>
         </h3>
         <label for="sidebar-toggle" class="ti-menu-alt"></label>
       </div>
@@ -28,7 +28,32 @@
         <ul>
           <li>
             <span class="ti-search"></span>
-            <input class="input-search" type="search" placeholder="Search place..." />
+            <input
+              class="input-search"
+              type="search"
+              placeholder="Search place..."
+              type="text"
+              name="city"
+              id="city"
+            />
+          </li>
+          <li>
+            <img src="img/sun-cloud-rain-lg.jpeg" alt="" />
+          </li>
+          <li class="text-center">
+            <h1 class="sidebar-weather-text">12°</h1>
+          </li>
+          <li class="text-center">
+            <p>Monday, <span class="text-gray">16:00</span></p>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li><p class="sidebar-text-sm">Mostly Cloud</p></li>
+          <li><p class="sidebar-text-sm">Rain - 30%</p></li>
+          <li>
+            <p class="sidebar-city-text">New York</p>
+            <img class="sidebar-city-img" src="img/new-york.jpeg" alt="" />
           </li>
         </ul>
       </div>
@@ -42,8 +67,14 @@
         </div>
 
         <div class="social-icons">
-          <span class="ti-bell"></span>
-          <span class="ti-comment"></span>
+          <div class="centigrade-icon">
+            <span class="profile-icon-text">C°</span>
+          </div>
+          <div class="farenheit-icon">
+            <span class="profile-icon-text">F°</span>
+          </div>
+
+          <img class="profile-img" src="img/profile.jpeg" alt="" />
           <div></div>
         </div>
       </header>
@@ -52,70 +83,70 @@
         <div class="dash-cards">
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-briefcase"></span>
               <div>
-                <h5>Sun</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-reload"></span>
               <div>
-                <h5>Mon</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-check-box"></span>
               <div>
-                <h5>Tue</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-check-box"></span>
               <div>
-                <h5>Wed</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-check-box"></span>
               <div>
-                <h5>Thu</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-check-box"></span>
               <div>
-                <h5>Fri</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
 
           <div class="card-single">
             <div class="card-body">
-              <span class="ti-check-box"></span>
               <div>
-                <h5>Sat</h5>
-                <h4>$3000</h4>
+                <h4>Sun</h4>
+                <img src="img/sun.jpeg" alt="" />
+                <h4>15° <span class="text-gray"> 3°</span></h4>
               </div>
             </div>
           </div>
@@ -124,7 +155,10 @@
         <section class="recent">
           <h3 class="activity-header">Today's Highlights</h3>
           <div class="activity-grid">
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>UV Index</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -133,7 +167,10 @@
                 </div>
               </div>
             </div>
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>Wind Status</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -142,7 +179,10 @@
                 </div>
               </div>
             </div>
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>Sunrise & Sunset</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -151,7 +191,10 @@
                 </div>
               </div>
             </div>
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>Humidity</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -160,7 +203,10 @@
                 </div>
               </div>
             </div>
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>Visibility</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -169,7 +215,10 @@
                 </div>
               </div>
             </div>
-            <div class="card-single">
+            <div class="card-highlights">
+              <div class="card-header">
+                <h5>Air Quality</h5>
+              </div>
               <div class="card-body">
                 <span class="ti-check-box"></span>
                 <div>
@@ -182,5 +231,6 @@
         </section>
       </main>
     </div>
+    <script src="js/app.js"></script>
   </body>
 </html>

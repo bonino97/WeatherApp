@@ -3,8 +3,7 @@
 :root {
   --main-color: #027581;
   --color-dark: #1d2231;
-  --text-grey: #8390a2;
-  --background-color: ;
+  --color-gray: #8390a2;
 }
 
 * {
@@ -26,7 +25,7 @@ html {
 
 .sidebar {
   height: 100%;
-  width: 240px;
+  width: 255px;
   position: fixed;
   left: 0;
   top: 0;
@@ -53,7 +52,7 @@ html {
 }
 
 .sidebar li {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .sidebar a {
@@ -71,7 +70,10 @@ html {
 
 #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
 #sidebar-toggle:checked ~ .sidebar li span:last-child,
-#sidebar-toggle:checked ~ .sidebar li input {
+#sidebar-toggle:checked ~ .sidebar li input,
+#sidebar-toggle:checked ~ .sidebar li img,
+#sidebar-toggle:checked ~ .sidebar li p,
+#sidebar-toggle:checked ~ .sidebar li h1 {
   display: none;
 }
 
@@ -90,6 +92,25 @@ html {
   width: calc(100% - 60px);
 }
 
+.sidebar-text-sm {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sidebar-city-img {
+  width: 200px;
+  height: 100px;
+  border-radius: 1rem;
+  opacity: 75%;
+}
+
+.sidebar-city-text {
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  margin: 1rem;
+}
+
 .main-content {
   position: relative;
   margin-left: 240px;
@@ -98,7 +119,7 @@ html {
 
 header {
   position: fixed;
-  left: 240px;
+  left: 255px;
   top: 0;
   z-index: 100;
   width: calc(100% - 240px);
@@ -109,6 +130,46 @@ header {
   align-items: center;
   justify-content: space-between;
   transition: left 500ms;
+}
+
+.profile-img {
+  width: 35px;
+  height: 33px;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.centigrade-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  width: 35px;
+  height: 30px;
+  border-radius: 1rem;
+  margin: 1rem;
+  background-color: black;
+  color: white;
+}
+
+.farenheit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  width: 35px;
+  height: 30px;
+  border-radius: 1rem;
+  margin: 1rem;
+  background-color: white;
+}
+
+.profile-icon-text {
+  margin: 0 0 0 5px !important;
+  padding: 0 !important;
+  font-weight: bold;
 }
 
 .content-wrapper {
@@ -179,7 +240,16 @@ main {
 .dash-cards {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-column-gap: 1rem;
+  grid-column-gap: 0.1rem;
+}
+
+.card-highlights {
+  height: 15rem;
+  width: 20rem;
+  background: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-bottom: 1rem;
 }
 
 .card-single {
@@ -187,29 +257,37 @@ main {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin-bottom: 1rem;
+  width: 8rem;
+  height: 8rem;
+}
+
+.card-header {
+  padding: 1rem 1rem;
+  text-align: left;
 }
 
 .card-body {
   padding: 1rem 1rem;
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
-.card-body span {
-  font-size: 1.5rem;
-  color: #777;
-  padding-right: 1.4rem;
+.card-header h5 {
+  color: var(--color-gray);
+  font-size: 1rem;
 }
 
 .card-body h5 {
-  color: var(--text-grey);
+  color: var(--color-gray);
   font-size: 1rem;
+}
+
+.card-body img {
+  width: 45px;
 }
 
 .card-body h4 {
   color: var(--color-dark);
   font-size: 1.1rem;
-  margin-top: 0.2rem;
 }
 
 .card-footer {
@@ -239,7 +317,7 @@ main {
 }
 
 .activity-card h3 {
-  color: var(--text-grey);
+  color: var(--color-gray);
   margin: 1rem;
 }
 
@@ -287,11 +365,42 @@ tbody tr:nth-child(even) {
   padding: 0.4rem 1rem;
 }
 
-.table-responsive {
-  overflow-x: auto;
+.sidebar-weather-text {
+  font-size: 5em;
+  font-weight: 200;
+}
+
+.sidebar-weather-text .centigrade-letter {
+  font-size: 0.5em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: var(--color-gray);
 }
 
 @media only screen and (max-width: 1200px) {
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:checked ~ .sidebar li span:last-child,
+  #sidebar-toggle:checked ~ .sidebar li input,
+  #sidebar-toggle:checked ~ .sidebar li img,
+  #sidebar-toggle:checked ~ .sidebar li p,
+  #sidebar-toggle:checked ~ .sidebar li h1 {
+    display: unset;
+  }
+
+  #sidebar-toggle:not(:checked) ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:not(:checked) ~ .sidebar li span:last-child,
+  #sidebar-toggle:not(:checked) ~ .sidebar li input,
+  #sidebar-toggle:not(:checked) ~ .sidebar li img,
+  #sidebar-toggle:not(:checked) ~ .sidebar li p,
+  #sidebar-toggle:not(:checked) ~ .sidebar li h1 {
+    display: none;
+  }
+  
   .sidebar {
     width: 60px;
     z-index: 150;
@@ -325,7 +434,6 @@ tbody tr:nth-child(even) {
     display: none;
   }
 
-
   #sidebar-toggle:checked ~ .sidebar .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -345,6 +453,24 @@ tbody tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 860px) {
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:checked ~ .sidebar li span:last-child,
+  #sidebar-toggle:checked ~ .sidebar li input,
+  #sidebar-toggle:checked ~ .sidebar li img,
+  #sidebar-toggle:checked ~ .sidebar li p,
+  #sidebar-toggle:checked ~ .sidebar li h1 {
+    display: unset;
+  }
+
+  #sidebar-toggle:not(:checked) ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:not(:checked) ~ .sidebar li span:last-child,
+  #sidebar-toggle:not(:checked) ~ .sidebar li input,
+  #sidebar-toggle:not(:checked) ~ .sidebar li img,
+  #sidebar-toggle:not(:checked) ~ .sidebar li p,
+  #sidebar-toggle:not(:checked) ~ .sidebar li h1 {
+    display: none;
+  }
+
   .dash-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -363,8 +489,26 @@ tbody tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 600px) {
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:checked ~ .sidebar li span:last-child,
+  #sidebar-toggle:checked ~ .sidebar li input,
+  #sidebar-toggle:checked ~ .sidebar li img,
+  #sidebar-toggle:checked ~ .sidebar li p,
+  #sidebar-toggle:checked ~ .sidebar li h1 {
+    display: unset;
+  }
+
+  #sidebar-toggle:not(:checked) ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:not(:checked) ~ .sidebar li span:last-child,
+  #sidebar-toggle:not(:checked) ~ .sidebar li input,
+  #sidebar-toggle:not(:checked) ~ .sidebar li img,
+  #sidebar-toggle:not(:checked) ~ .sidebar li p,
+  #sidebar-toggle:not(:checked) ~ .sidebar li h1 {
+    display: none;
+  }
+
   .dash-cards {
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
