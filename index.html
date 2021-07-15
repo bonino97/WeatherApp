@@ -162,12 +162,12 @@
           <div class="activity-grid">
             <div class="card-highlights">
               <div class="card-header">
-                <h5>UV Index</h5>
+                <h5>Feels Like</h5>
               </div>
               <div class="card-body text-left">
                 <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+                  <h4 id="feelsLike" class="today-highlights-text">10°</h4>
+                  <h4 class="mt-2">Strange &#129327;</h4>
                 </div>
               </div>
             </div>
@@ -177,8 +177,8 @@
               </div>
               <div class="card-body text-left">
                 <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+                  <h4 id="wind" class="today-highlights-text">2 m/s</h4>
+                  <h4 class="mt-2">High &#127786;</h4>
                 </div>
               </div>
             </div>
@@ -186,10 +186,14 @@
               <div class="card-header">
                 <h5>Sunrise & Sunset</h5>
               </div>
-              <div class="card-body text-left">
-                <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+              <div class="card-body">
+                <div class="sunrise-content">
+                  <span class="avatar-size">&#127764;</span>
+                  <h4 id="sunrise" class="sunrise-text">6:35 AM</h4>
+                </div>
+                <div class="sunset-content">
+                  <span class="avatar-size">&#127768;</span>
+                  <h4 id="sunset" class="sunset-text">5:42 PM</h4>
                 </div>
               </div>
             </div>
@@ -217,12 +221,16 @@
             </div>
             <div class="card-highlights">
               <div class="card-header">
-                <h5>Air Quality</h5>
+                <h5>Temp Max & Min</h5>
               </div>
               <div class="card-body">
-                <div>
-                  <h5>Processed</h5>
-                  <h4>$20,659</h4>
+                <div class="temp-max-min-content">
+                  <img src="img/arrow-up.jpeg" alt="" />
+                  <h4 id="tempMax" class="temp-max-min-text">20°</h4>
+                </div>
+                <div class="temp-max-min-content">
+                  <img src="img/arrow-down.jpeg" alt="" />
+                  <h4 id="tempMin" class="temp-max-min-text">3°</h4>
                 </div>
               </div>
             </div>

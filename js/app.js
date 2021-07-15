@@ -23,6 +23,22 @@ function setDailyData(data) {
     data.visibility / 1000
   } km`;
   document.getElementById('humidity').innerHTML = `${data.main.humidity} %`;
+  document.getElementById('feelsLike').innerHTML = `${kelvinToCent(
+    data.main.feels_like
+  )}°`;
+  document.getElementById('wind').innerHTML = `${data.wind.speed} m/s`;
+  document.getElementById('sunrise').innerHTML = `${getHoursAndMinutes(
+    data.sys.sunrise
+  )} AM`;
+  document.getElementById('sunset').innerHTML = `${getHoursAndMinutes(
+    data.sys.sunset
+  )} PM`;
+  document.getElementById('tempMax').innerHTML = `${kelvinToCent(
+    data.main.temp_max
+  )}°`;
+  document.getElementById('tempMin').innerHTML = `${kelvinToCent(
+    data.main.temp_min
+  )}°`;
 }
 
 function apiPerDay(city) {
@@ -121,4 +137,14 @@ function getDate(dateTimeStamp) {
     minutes.substr(-2);
 
   return formattedDate;
+}
+
+function getHoursAndMinutes(dateTimeStamp) {
+  let date = new Date(dateTimeStamp * 1000);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  return hours + ':' + minutes;
 }
